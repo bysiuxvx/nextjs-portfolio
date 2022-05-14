@@ -6,7 +6,6 @@ import ColorModeToggler from "./color-mode-toggler"
 import {
   Box,
   Container,
-  Flex,
   Link,
   Stack,
   Menu,
