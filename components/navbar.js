@@ -1,6 +1,20 @@
+import { useRouter } from "next/router"
 import NextLink from "next/link"
 
-import { Box, Container, Flex, Link, Stack } from "@chakra-ui/react"
+import ColorModeToggler from "./color-mode-toggler"
+
+import {
+  Box,
+  Container,
+  Flex,
+  Link,
+  Stack,
+  Menu,
+  MenuButton,
+  MenuList,
+  IconButton,
+} from "@chakra-ui/react"
+import { HamburgerIcon } from "@chakra-ui/icons"
 
 const pathList = [
   { name: "Home", path: "/" },
@@ -9,42 +23,55 @@ const pathList = [
   { name: "Contact", path: "/contact" },
 ]
 
-const navPaths = pathList.map((item) => (
-  <NextLink
-    href={item.path}
-    passHref
-    scroll={false}
-    //   scroll
-    //   scroll
-    //   scroll
-  >
-    <Link
-      p={2}
-      // bg
-      // color
-    >
-      {item.name}
-    </Link>
-  </NextLink>
-))
+const Navbar = () => {
+  const router = useRouter()
 
-const Navbar = (props) => {
-  const { path } = props
+  const navPaths = pathList.map((item) => (
+    <NextLink href={item.path} passHref scroll={false}>
+      <Link
+        p={2}
+        bg={item.path === router.asPath ? "pink" : null}
+        // color
+      >
+        {item.name}
+      </Link>
+    </NextLink>
+  ))
 
   return (
-    <Box as="nav" position={"fixed"} w={"100%"} {...props} zIndex={1}>
-      <Container
-        display={"flex"}
-        p={2}
-        maxW={"container.md"}
-        flexWrap={"wrap"}
-        align={"center"}
-        justify=""
-      >
-        {/* <Flex></Flex> */}
-        <Stack direction={["column", "row"]}>{navPaths}</Stack>
-      </Container>
-    </Box>
+    <Container maxW={"container.lg"}>
+      <Box as="nav" position={"fixed"} w={"100%"} zIndex={1}>
+        <Container
+          display={"flex"}
+          p={2}
+          maxW={"container.md"}
+          flexWrap={"wrap"}
+        >
+          <Stack
+            direction={["column", "row"]}
+            display={["none", "flex"]}
+            alignItems="center"
+            flexGrow={0}
+          >
+            {navPaths}
+          </Stack>
+          <Box flex={1} align="right" mr={4}>
+            <ColorModeToggler />
+            <Box ml={2} display={["inline-block", "none"]}>
+              <Menu isLazy id="navbar-menu">
+                <MenuButton
+                  as={IconButton}
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                  aria-label="Options"
+                />
+                <MenuList>{navPaths}</MenuList>
+              </Menu>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+    </Container>
   )
 }
 
