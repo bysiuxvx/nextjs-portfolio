@@ -31,6 +31,10 @@ const Navbar = () => {
         p={2}
         bg={item.path === router.asPath ? "pink" : null}
         // color
+        // _hover={{
+        //   background: "white",
+        //   color: "teal.500",
+        // }}
       >
         {item.name}
       </Link>
@@ -38,39 +42,34 @@ const Navbar = () => {
   ))
 
   return (
-    <Container maxW={"container.lg"}>
-      <Box as="nav" position={"fixed"} w={"100%"} zIndex={1}>
-        <Container
-          display={"flex"}
-          p={2}
-          maxW={"container.md"}
-          flexWrap={"wrap"}
+    // <Container maxW={"container.lg"} >
+    <Box as="nav" position={"fixed"} w={"100%"} zIndex={1} display="block">
+      <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
+        <Stack
+          direction={["column", "row"]}
+          display={["none", "flex"]}
+          alignItems="center"
+          flexGrow={0}
         >
-          <Stack
-            direction={["column", "row"]}
-            display={["none", "flex"]}
-            alignItems="center"
-            flexGrow={0}
-          >
-            {navPaths}
-          </Stack>
-          <Box flex={1} align="right" mr={4}>
-            <ColorModeToggler />
-            <Box ml={2} display={["inline-block", "none"]}>
-              <Menu isLazy id="navbar-menu">
-                <MenuButton
-                  as={IconButton}
-                  icon={<HamburgerIcon />}
-                  variant="outline"
-                  aria-label="Options"
-                />
-                <MenuList>{navPaths}</MenuList>
-              </Menu>
-            </Box>
+          {navPaths}
+        </Stack>
+        <Box flex={1} align="right" mr={4}>
+          <ColorModeToggler />
+          <Box ml={2} display={["inline-block", "none"]}>
+            <Menu isLazy id="navbar-menu">
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
+              <MenuList>{navPaths}</MenuList>
+            </Menu>
           </Box>
-        </Container>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
+    // </Container>
   )
 }
 
