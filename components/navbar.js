@@ -42,8 +42,15 @@ const Navbar = () => {
   ))
 
   return (
-    // <Container maxW={"container.lg"} >
-    <Box as="nav" position={"fixed"} w={"100%"} zIndex={1} display="block">
+    <Box
+      position="fixed"
+      as="nav"
+      w="100%"
+      // bg={useColorModeValue("#ffffff40", "#20202380")}
+      css={{ backdropFilter: "blur(10px)" }}
+      zIndex={1}
+      // {...props}
+    >
       <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
         <Stack
           direction={["column", "row"]}
@@ -69,7 +76,6 @@ const Navbar = () => {
         </Box>
       </Container>
     </Box>
-    // </Container>
   )
 }
 
