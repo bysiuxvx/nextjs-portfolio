@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import NextLink from "next/link"
 
-import ColorModeToggler from "./color-mode-toggler"
+import ColorModeToggler from "./ColorModeToggler"
 
 import {
   Box,
@@ -12,6 +12,7 @@ import {
   MenuButton,
   MenuList,
   IconButton,
+  useColorModeValue,
 } from "@chakra-ui/react"
 import { HamburgerIcon } from "@chakra-ui/icons"
 
@@ -29,12 +30,22 @@ const Navbar = () => {
     <NextLink href={item.path} passHref scroll={false}>
       <Link
         p={2}
-        bg={item.path === router.asPath ? "pink" : null}
-        // color
-        // _hover={{
-        //   background: "white",
-        //   color: "teal.500",
-        // }}
+        borderRadius={7}
+        bg={
+          item.path === router.asPath
+            ? useColorModeValue("#9ed8db", "orange")
+            : null
+        }
+        _hover={
+          item.path === router.asPath
+            ? { textDecoration: "none" }
+            : {
+                textDecoration: "none",
+                cursor: "pointer",
+                transform: "translateY(-3.5px)",
+                transition: ".5s",
+              }
+        }
       >
         {item.name}
       </Link>
@@ -46,8 +57,7 @@ const Navbar = () => {
       position="fixed"
       as="nav"
       w="100%"
-      // bg={useColorModeValue("#ffffff40", "#20202380")}
-      css={{ backdropFilter: "blur(10px)" }}
+      css={{ backdropFilter: "blur(100px)" }}
       zIndex={1}
       // {...props}
     >
