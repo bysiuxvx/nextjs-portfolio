@@ -6,6 +6,8 @@ const Footer = () => {
       align="center"
       opacity={0.4}
       fontSize="sm"
+      userSelect={"none"}
+      pt={30}
       pb={4}
       css={{
         position: "absolute",
