@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.0.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@emotion/styled-base": "^11.0.0",
     "@react-three/drei": "^9.8.1",
     "@react-three/fiber": "^8.0.16",
     "@tippy.js/react": "^3.1.1",

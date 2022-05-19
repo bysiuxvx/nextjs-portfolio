@@ -24,7 +24,7 @@ import {
 } from "../../components/TechnologiesContainers"
 
 import "tippy.js/dist/tippy.css"
-import { technologiesList } from "./technologiesList"
+import { technologiesList } from "../../data/technologiesList"
 
 const About = () => {
   const Tooltip = dynamic(() => import("@tippy.js/react"), { ssr: "false" })

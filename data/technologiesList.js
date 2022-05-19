@@ -1,11 +1,11 @@
-import Emoji from "../../components/Emoji"
+import Emoji from "../components/Emoji"
 
-import SvgNextjs2 from "../../SVG/Nextjs2"
-import SvgTypescript from "../../SVG/Typescript"
-import SvgRedux from "../../SVG/Redux"
-import SvgSass1 from "../../SVG/Sass1"
-import SvgDocker from "../../SVG/Docker"
-import SvgBootstrap4 from "../../SVG/Bootstrap4"
+import SvgNextjs2 from "../SVG/Nextjs2"
+import SvgTypescript from "../SVG/Typescript"
+import SvgRedux from "../SVG/Redux"
+import SvgSass1 from "../SVG/Sass1"
+import SvgDocker from "../SVG/Docker"
+import SvgBootstrap4 from "../SVG/Bootstrap4"
 
 export const technologiesList = [
   //   {
