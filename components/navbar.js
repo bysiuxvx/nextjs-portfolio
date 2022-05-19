@@ -33,7 +33,8 @@ const Navbar = () => {
         borderRadius={7}
         bg={
           item.path === router.asPath
-            ? useColorModeValue("#9ed8db", "orange")
+            ? // eslint-disable-next-line react-hooks/rules-of-hooks
+              useColorModeValue("#9ed8db", "orange")
             : null
         }
         _hover={

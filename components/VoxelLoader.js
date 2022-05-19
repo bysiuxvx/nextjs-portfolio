@@ -27,6 +27,8 @@ export const VoxelContainer = forwardRef(({ children }, ref) => (
   </Box>
 ))
 
+VoxelContainer.displayName = "VoxelContainer"
+
 const VoxelLoader = () => {
   return (
     <VoxelContainer>
