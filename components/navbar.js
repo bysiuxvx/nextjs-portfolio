@@ -27,7 +27,7 @@ const Navbar = () => {
   const router = useRouter()
 
   const navPaths = pathList.map((item) => (
-    <NextLink href={item.path} passHref scroll={false}>
+    <NextLink href={item.path} passHref scroll={false} key={item.name}>
       <Link
         p={2}
         borderRadius={7}
@@ -57,9 +57,8 @@ const Navbar = () => {
       position="fixed"
       as="nav"
       w="100%"
-      css={{ backdropFilter: "blur(100px)" }}
+      css={{ backdropFilter: "blur(10px)" }}
       zIndex={1}
-      // {...props}
     >
       <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
         <Stack
