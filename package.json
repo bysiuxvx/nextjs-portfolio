@@ -11,13 +11,15 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.0",
     "@chakra-ui/react": "^2.0.0",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@react-three/drei": "^9.8.1",
     "@react-three/fiber": "^8.0.16",
     "framer-motion": "^6",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "three": "^0.140.2",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
