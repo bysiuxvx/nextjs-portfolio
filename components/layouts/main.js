@@ -27,7 +27,7 @@ const Layout = ({ children, router }) => {
       <Container maxW={"container.md"} pt={14}>
         <DynamicVoxelModel />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     </Box>
   )
