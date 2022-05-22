@@ -7,7 +7,7 @@ import Footer from "../Footer"
 import Navbar from "../Navbar"
 import VoxelLoader from "../VoxelLoader"
 
-import { Box, Container } from "@chakra-ui/react"
+import { Box, Center, Container, Flex } from "@chakra-ui/react"
 
 const DynamicVoxelModel = dynamic(() => import("../VoxelModel"), {
   ssr: false,
@@ -24,11 +24,10 @@ const Layout = ({ children, router }) => {
         <title>Patryk&apos;s portfolio</title>
       </Head>
       <Navbar path={router.asPath} />
-      <Container maxW={"container.lg"} pt={14}>
+      <Container maxW={"container.md"} pt={14}>
         <DynamicVoxelModel />
-
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </Container>
     </Box>
   )
