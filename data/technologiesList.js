@@ -25,7 +25,7 @@ export const technologiesList = [
     name: "Next.js",
     image: SvgNextjs2,
     imageAlt: "Next.js logo",
-    comment: `I love React, most of the things I do are in React. And this is basically React but better. I like how some things have been improved and even simplified, like f.e the routing. SSR is also going to become a standard soon, which is the main point of this framework.`,
+    comment: `I love React, most of the things I do are in React. And this is basically React, but better. I like how some things have been improved and even simplified, like f.e the routing. SSR is also going to become a standard soon, which is the main point of this framework.`,
   },
   {
     name: "Redux",
@@ -38,7 +38,7 @@ export const technologiesList = [
     image: SvgSass1,
     imageAlt: "Sass logo",
     comment:
-      "I rarely use preprocessors these days, but if I had to write CSS I would definitely do that in SCSS!",
+      "I rarely use preprocessors these days, but if I had to use one it would definitely be SCSS!",
   },
   {
     name: "Docker",
