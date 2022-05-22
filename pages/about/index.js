@@ -2,32 +2,35 @@ import Head from "next/head"
 import dynamic from "next/dynamic"
 
 import PageWrapper from "../../components/layouts/PageWrapper"
-import Emoji from "../../components/Emoji"
-
-// import Tippy from "@tippy.js/react"
-import { followCursor } from "tippy.js"
-
-import {
-  Container,
-  Box,
-  Center,
-  Heading,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react"
 import Paragraph from "../../components/Paragraph"
+// import TechnologiesAccordion from "../../components/TechnologiesAccordion"
+
+import { technologiesList } from "../../data/technologiesList"
+
 import {
   SvgContainer,
   SvgWrapper,
   TechnologiesSection,
   StyledIcon,
 } from "../../components/TechnologiesContainers"
+import {
+  Box,
+  Center,
+  Heading,
+  Text,
+  useColorModeValue,
+  Divider,
+} from "@chakra-ui/react"
 
+import { followCursor } from "tippy.js"
 import "tippy.js/dist/tippy.css"
-import { technologiesList } from "../../data/technologiesList"
 
 const About = () => {
   const Tooltip = dynamic(() => import("@tippy.js/react"), { ssr: "false" })
+
+  const TechAccordion = dynamic(() =>
+    import("../../components/TechnologiesAccordion")
+  )
 
   const technologies = technologiesList.map((technology) => (
     <Tooltip
@@ -54,27 +57,29 @@ const About = () => {
   }
 
   return (
-    <PageWrapper maxW={"container.md"}>
-      <Center>
+    <PageWrapper maxW={"container.md"} pb={100}>
+      <Center maxW={"container.sm"}>
         <Box
           borderRadius={"lg"}
-          p={3}
+          mt={8}
+          p={2}
           bg="#e2d6bf80"
           css={{ backdropFilter: "blur(100px)" }}
           position={"relative"}
           textAlign="center"
           w={"20em"}
+          userSelect="none"
         >
           Hi again, nice to meet you!
         </Box>
       </Center>
-      <Box maxW={"container.sm"}>
+      <Box maxW={"container.sm"} pt={3}>
         <Heading as={"h2"} variant="page-title">
           Patryk Byszek
-          <br />
-          DODAJ TEKST JAKIS
         </Heading>
-        <Heading as={"p"} variant="section-title" fontSize={"1.5em"}>
+        <Text>(Developer / Musician / Coffee enjoyer)</Text>
+        <Divider />
+        <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Bio
         </Heading>
         <Paragraph>
@@ -86,28 +91,37 @@ const About = () => {
           doing my best to become a fullstack dev by learning Node, specifically
           Express.
         </Paragraph>
-        <Heading as={"p"} variant="section-title" fontSize={"1.5em"}>
+        <Divider />
+        <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Tech
         </Heading>
         <Paragraph>
           Some of the technologies I am familiar with and used during my
           commercial experience:
         </Paragraph>
-        <TechnologiesSection>
-          <SvgContainer bg={useColorModeValue("pink", "red")}>
+        <TechnologiesSection pt={2}>
+          <SvgContainer bg={useColorModeValue("#e2d6bf80", "#e2d6bf80")}>
+            {/* <SvgContainer bg={useColorModeValue("pink", "#e2d6bf80")}> */}
             {technologies}
           </SvgContainer>
         </TechnologiesSection>
-        <Heading as={"p"} fontSize={"1.5em"}>
+        <Text textAlign={"justify"} pt={3}>
+          Apart from the above, I have also experimented with several other
+          frameworks, state management libraries, databases, CSS preprocessors,
+          UI libraries... <br />
+        </Text>
+        <TechAccordion />
+        <Divider />
+        <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Hobbies
         </Heading>
         <Paragraph>
           My free time I either spend relaxing with my dog, learning something
-          new, or playing guitar. I used to play in a band and even released two
-          records on vinyl. I am also a bit of a gamer. Besides the mentioned, I
-          also am interested in electronics and with the help of tutorials
-          I&apos;ve built small devices like guitar pedal effects - most of them
-          worked...
+          new, or playing guitar. I used to play in a band, and even released
+          two records on vinyl. I am also a bit of a gamer. Besides the
+          mentioned, I also am interested in electronics and with the help of
+          tutorials I&apos;ve built small devices like guitar pedal effects -
+          most of them worked...
         </Paragraph>
       </Box>
     </PageWrapper>
