@@ -23,7 +23,7 @@ const VoxelModel = () => {
   return (
     <VoxelContainer>
       <Canvas linear camera={{ position: [2, 2, -2.5], fov: 30 }}>
-        <ambientLight color={"0xcccccc"} intensity={1.5} />
+        <ambientLight intensity={1.5} />
         <Dog
           position={[-0.1, -0.2, 0]}
           rotation={[0, Math.PI / 2, 0]}
