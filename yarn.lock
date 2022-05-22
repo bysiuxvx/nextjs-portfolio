@@ -398,7 +398,7 @@
   dependencies:
     "@chakra-ui/utils" "^2.0.0"
 
-"@chakra-ui/react@^2.1.0":
+"@chakra-ui/react@^2.1.0-next.3":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@chakra-ui/react/-/react-2.1.0.tgz#e1d5ef8682f5994ecd149a975152565a8d2c2637"
   integrity sha512-dL0xTJPJVhJZBpnbyFXUOyBSuJaTKn4AzoxnQs8LJn0zVRHZ24N2TLf5Er26O08E+YltohFfy4MZzgAIIXEIoA==
