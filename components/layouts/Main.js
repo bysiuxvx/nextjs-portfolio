@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Head from "next/head"
 import dynamic from "next/dynamic"
 
-import Footer from "../Footer"
+import Footer from "../footer"
 import Navbar from "../Navbar"
 import VoxelLoader from "../VoxelLoader.js"
 
