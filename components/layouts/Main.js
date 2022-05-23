@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 import Head from "next/head"
 import dynamic from "next/dynamic"
 
-import Footer from "../Footer.js"
-import Navbar from "../Navbar.js"
+import Footer from "../Footer"
+import Navbar from "../Navbar"
 import VoxelLoader from "../VoxelLoader.js"
 
 import { Box, Center, Container, Flex } from "@chakra-ui/react"

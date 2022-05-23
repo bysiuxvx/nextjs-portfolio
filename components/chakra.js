@@ -1,11 +1,13 @@
+import theme from "../lib/theme.js"
 import {
   ChakraProvider,
   cookieStorageManager,
   localStorageManager,
 } from "@chakra-ui/react"
-import theme from "../lib/theme.js"
 
-export default function Chakra({ cookies, children }) {
+// export default function Chakra({ cookies, children }) {
+
+const Chakra = ({ cookies, children }) => {
   const colorModeManager =
     typeof cookies === "string"
       ? cookieStorageManager(cookies)
@@ -25,3 +27,5 @@ export async function getServerSideProps({ req }) {
     },
   }
 }
+
+export default Chakra

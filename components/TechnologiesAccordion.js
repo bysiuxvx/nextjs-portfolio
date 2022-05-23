@@ -52,9 +52,9 @@ const TechnologiesAccordion = () => {
             </Text>
             <AccordionPanel textAlign={"justify"}>
               Simple and easy to use state management that kind of reminds me of
-              Redux Toolkit, but without the boilerplate. I have used it already
-              on several occassions and it&apos;s my go to solution whenever I
-              have to work with state.
+              Redux Toolkit, but with even less boilerplate. I have used it
+              already on several occassions and it&apos;s my go to solution
+              whenever I have to work with state.
             </AccordionPanel>
           </AccordionItem>
         </AccordionPanel>
