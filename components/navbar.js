@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import NextLink from "next/link"
 
-import ColorModeToggler from "./ColorModeToggler"
+import ColorModeToggler from "./ColorModeToggler.js"
 
 import {
   Box,

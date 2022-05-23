@@ -1,18 +1,17 @@
 import Head from "next/head"
 import dynamic from "next/dynamic"
 
-import PageWrapper from "../../components/layouts/PageWrapper"
-import Paragraph from "../../components/Paragraph"
-// import TechnologiesAccordion from "../../components/TechnologiesAccordion"
+import PageWrapper from "../../components/layouts/PageWrapper.js"
+import Paragraph from "../../components/Paragraph.js"
 
-import { technologiesList } from "../../data/technologiesList"
+import { technologiesList } from "../../data/technologiesList.js"
 
 import {
   SvgContainer,
   SvgWrapper,
   TechnologiesSection,
   StyledIcon,
-} from "../../components/TechnologiesContainers"
+} from "../../components/TechnologiesContainers.js"
 import {
   Box,
   Center,
@@ -29,7 +28,7 @@ const About = () => {
   const Tooltip = dynamic(() => import("@tippyjs/react"), { ssr: "false" })
 
   const TechAccordion = dynamic(() =>
-    import("../../components/TechnologiesAccordion")
+    import("../../components/TechnologiesAccordion.js")
   )
 
   const technologies = technologiesList.map((technology) => (

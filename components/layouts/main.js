@@ -3,13 +3,13 @@ import { useEffect, useState } from "react"
 import Head from "next/head"
 import dynamic from "next/dynamic"
 
-import Footer from "../Footer"
-import Navbar from "../Navbar"
-import VoxelLoader from "../VoxelLoader"
+import Footer from "../Footer.js"
+import Navbar from "../Navbar.js"
+import VoxelLoader from "../VoxelLoader.js"
 
 import { Box, Center, Container, Flex } from "@chakra-ui/react"
 
-const DynamicVoxelModel = dynamic(() => import("../VoxelModel"), {
+const DynamicVoxelModel = dynamic(() => import("../VoxelModel.js"), {
   ssr: false,
   loading: () => <VoxelLoader />,
 })

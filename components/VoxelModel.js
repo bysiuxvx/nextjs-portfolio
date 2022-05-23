@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { useGLTF, Environment, OrbitControls } from "@react-three/drei"
 import { Box } from "@chakra-ui/react"
-import { VoxelContainer } from "./VoxelLoader"
+import { VoxelContainer } from "./VoxelLoader.js"
 
 function Zoom() {
   useFrame((state) => {
