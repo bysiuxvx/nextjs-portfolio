@@ -2,23 +2,20 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 import Head from "next/head"
-import Typewriter from "typewriter-effect"
 
 import PageWrapper from "../components/layouts/PageWrapper"
 
 import { Box, Container, Heading } from "@chakra-ui/react"
+import dynamic from "next/dynamic"
 
 const Page = () => {
   // const [introPlayed, setIntroPlayed] = useState(false)
+  // const router = useRouter()
 
-  const router = useRouter()
+  const Typewriter = dynamic(() => import("typewriter-effect"))
 
   return (
-    <PageWrapper
-      // pt={0}
-      maxW={"container.lg"}
-      mb={30}
-    >
+    <PageWrapper maxW={"container.lg"} mb={30}>
       <Head>
         <meta
           name="description"
