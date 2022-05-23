@@ -4,7 +4,7 @@ import Head from "next/head"
 import dynamic from "next/dynamic"
 
 import Footer from "../footer"
-import Navbar from "../Navbar"
+import Navbar from "../navbar"
 import VoxelLoader from "../VoxelLoader.js"
 
 import { Box, Center, Container, Flex } from "@chakra-ui/react"
