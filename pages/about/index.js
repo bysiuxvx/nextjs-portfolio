@@ -26,7 +26,7 @@ import { followCursor } from "tippy.js"
 import "tippy.js/dist/tippy.css"
 
 const About = () => {
-  const Tooltip = dynamic(() => import("@tippy.js/react"), { ssr: "false" })
+  const Tooltip = dynamic(() => import("@tippyjs/react"), { ssr: "false" })
 
   const TechAccordion = dynamic(() =>
     import("../../components/TechnologiesAccordion")
