@@ -1,4 +1,4 @@
-import Emoji from "../components/Emoji"
+import Emoji from "./Emoji"
 
 import SvgNextjs2 from "../SVG/Nextjs2"
 import SvgTypescript from "../SVG/Typescript"
@@ -6,6 +6,35 @@ import SvgRedux from "../SVG/Redux"
 import SvgSass1 from "../SVG/Sass1"
 import SvgDocker from "../SVG/Docker"
 import SvgBootstrap4 from "../SVG/Bootstrap4"
+
+import { SvgContainer, SVG, StyledIcon } from "./TechnologiesContainers"
+import { useColorModeValue } from "@chakra-ui/react"
+import Tippy from "@tippyjs/react"
+import { followCursor } from "tippy.js"
+import "tippy.js/animations/scale-subtle.css"
+import "tippy.js/dist/tippy.css"
+
+const TechContainer = () => {
+  const technologies = technologiesList.map((technology) => (
+    <Tippy
+      content={technology.comment}
+      followCursor={true}
+      key={technology.name}
+      plugins={[followCursor]}
+      animation="scale-subtle"
+    >
+      <SVG>
+        <StyledIcon as={technology.image} />
+      </SVG>
+    </Tippy>
+  ))
+
+  return (
+    <SvgContainer bg={useColorModeValue("#e2d6bf80", "#e2d6bf80")}>
+      {technologies}
+    </SvgContainer>
+  )
+}
 
 export const technologiesList = [
   //   {
@@ -54,3 +83,5 @@ export const technologiesList = [
     comment: `Not a big fan of bootstrap, personally I prefer other UI libraries like semantic UI or Chakra UI(🥰), which in my opinion is both prettier and more modern, but also easier to use.`,
   },
 ]
+
+export default TechContainer

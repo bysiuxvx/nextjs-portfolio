@@ -1,48 +1,21 @@
-import Head from "next/head"
 import dynamic from "next/dynamic"
 
 import PageWrapper from "../../components/layouts/PageWrapper.js"
 import Paragraph from "../../components/Paragraph.js"
+import TechnologiesAccordion from "../../components/TechnologiesAccordion.js"
+import SvgSpinner from "../../components/SvgSpinner.js"
 
-import { technologiesList } from "../../data/technologiesList.js"
-
-import {
-  SvgContainer,
-  SvgWrapper,
-  TechnologiesSection,
-  StyledIcon,
-} from "../../components/TechnologiesContainers.js"
-import {
-  Box,
-  Center,
-  Heading,
-  Text,
-  useColorModeValue,
-  Divider,
-} from "@chakra-ui/react"
-
-import { followCursor } from "tippy.js"
-import "tippy.js/dist/tippy.css"
+import { TechnologiesSection } from "../../components/TechnologiesContainers.js"
+import { Box, Center, Heading, Text, Divider } from "@chakra-ui/react"
 
 const About = () => {
-  const Tooltip = dynamic(() => import("@tippyjs/react"), { ssr: "false" })
-
-  const TechAccordion = dynamic(() =>
-    import("../../components/TechnologiesAccordion.js")
+  const TechContainer = dynamic(
+    () => import("../../components/technologiesList"),
+    {
+      ssr: "false",
+      loading: () => <SvgSpinner />,
+    }
   )
-
-  const technologies = technologiesList.map((technology) => (
-    <Tooltip
-      content={technology.comment}
-      followCursor={true}
-      plugins={[followCursor]}
-      key={technology.name}
-    >
-      <SvgWrapper>
-        <StyledIcon as={technology.image} />
-      </SvgWrapper>
-    </Tooltip>
-  ))
 
   const myAge = () => {
     var today = new Date()
@@ -99,17 +72,14 @@ const About = () => {
           commercial experience:
         </Paragraph>
         <TechnologiesSection pt={2}>
-          <SvgContainer bg={useColorModeValue("#e2d6bf80", "#e2d6bf80")}>
-            {/* <SvgContainer bg={useColorModeValue("pink", "#e2d6bf80")}> */}
-            {technologies}
-          </SvgContainer>
+          <TechContainer />
         </TechnologiesSection>
         <Text textAlign={"justify"} pt={3}>
           Apart from the above, I have also experimented with several other
           frameworks, state management libraries, databases, CSS preprocessors,
           UI libraries... <br />
         </Text>
-        <TechAccordion />
+        <TechnologiesAccordion />
         <Divider />
         <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Hobbies

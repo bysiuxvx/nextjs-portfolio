@@ -16,9 +16,10 @@ export const SvgContainer = styled(Box)`
   height: 12.5rem;
   border-radius: 1.5rem;
 `
-export const SvgWrapper = styled(Box)`
+export const SVG = styled(Box)`
   display: inline-block;
   margin: 0 10px;
+  cursor: pointer;
 `
 export const StyledIcon = styled(Icon)`
   height: 50px;
@@ -27,4 +28,12 @@ export const StyledIcon = styled(Icon)`
   &:hover {
     transform: scale(1.3);
   }
+`
+export const SpinnerContainer = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18.75rem;
+  height: 12.5rem;
+  border-radius: 1.5rem;
 `
