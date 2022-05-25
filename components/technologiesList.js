@@ -1,5 +1,3 @@
-import Emoji from "./Emoji"
-
 import SvgNextjs2 from "../SVG/Nextjs2"
 import SvgTypescript from "../SVG/Typescript"
 import SvgRedux from "../SVG/Redux"
