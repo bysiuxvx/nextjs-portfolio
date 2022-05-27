@@ -58,7 +58,7 @@ const Navbar = () => {
       position="fixed"
       as="nav"
       w="100%"
-      css={{ backdropFilter: "blur(10px)" }}
+      backdropFilter={"blur(2.5px)"}
       zIndex={1}
     >
       <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
