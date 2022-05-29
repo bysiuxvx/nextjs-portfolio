@@ -30,7 +30,7 @@ const VoxelModel = () => {
           scale={0.15}
         />
         {/* <Dog position={[-0.1, -0.2, 0]} rotation={[0, Math.PI / 2, 0]} scale={0.2} /> */}
-        <OrbitControls />
+        <OrbitControls enableZoom={false} />
         <Zoom />
       </Canvas>
     </VoxelContainer>
