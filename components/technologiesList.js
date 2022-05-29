@@ -34,7 +34,7 @@ const TechContainer = () => {
   )
 }
 
-export const technologiesList = [
+const technologiesList = [
   //   {
   //     name: "React",
   //     image: SvgReact2,
@@ -45,20 +45,24 @@ export const technologiesList = [
     name: "TypeScript",
     image: SvgTypescript,
     imageAlt: "TypeScript logo",
-    comment: `It was a bit frustrating to use in the beginning due to all the errors and interface setups, but that's actually the point ot if. And I noticed - I don't repeat those mistakes too often afterwards 🤓. The key lies in knowing when and where to use it. Using TS for a landing page that has no logic behind it is a complete overkill imho.`,
+    comment: `It was a bit frustrating to use in the beginning due to all the errors and interface setups, but that's actually the point ot if.
+    And I noticed - I don't repeat those mistakes too often afterwards 🤓. The key lies in knowing when and where to use it. Using TS for a landing page that has no logic behind it is a complete overkill imho.`,
   },
 
   {
     name: "Next.js",
     image: SvgNextjs2,
     imageAlt: "Next.js logo",
-    comment: `I love React, most of the things I do are in React. And this is basically React, but better. I like how some things have been improved and even simplified, like f.e the routing. SSR is also going to become a standard soon, which is the main point of this framework.`,
+    comment: `I love React, most of the things I do are in React. And this is basically React, but better.
+    I like how some things have been improved and even simplified, like the routing as an example.
+    SSR is also going to become a standard soon, which is the main point of this framework.`,
   },
   {
     name: "Redux",
     image: SvgRedux,
     imageAlt: "Redux logo",
-    comment: `Love / hate relationship. I wish every Redux project was at least based on Redux Toolkit, it would be so much clearer. Things can become confusing with Redux reaaaally fast 😵‍💫.`,
+    comment: `Love & hate relationship. I wish every Redux project was at least based on Redux Toolkit, it would be so much clearer.
+    Things can become confusing with Redux reaaaally fast 😵‍💫.`,
   },
   {
     name: "Sass",
@@ -78,7 +82,7 @@ export const technologiesList = [
     name: "Bootstrap",
     image: SvgBootstrap4,
     imageAlt: "Bootstrap logo",
-    comment: `Not a big fan of bootstrap, personally I prefer other UI libraries like semantic UI or Chakra UI(🥰), which in my opinion is both prettier and more modern, but also easier to use.`,
+    comment: `Not a big fan of bootstrap, personally I prefer other UI libraries like semantic UI or Chakra UI, which in my opinion is both prettier and more modern, but also easier to use.`,
   },
 ]
 
