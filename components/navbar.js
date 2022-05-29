@@ -60,6 +60,7 @@ const Navbar = () => {
       w="100%"
       backdropFilter={"blur(2.5px)"}
       zIndex={1}
+      css={{ WebkitBackdropFilter: "blur(10px)" }}
     >
       <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
         <Stack
