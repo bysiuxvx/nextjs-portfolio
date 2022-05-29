@@ -9,13 +9,19 @@ import {
   ModalOverlay,
   Text,
   Tag,
+  Wrap,
+  Divider,
+  Button,
+  Icon,
+  Link,
 } from "@chakra-ui/react"
 
-const ProjectModal = ({ project, setModalContent }) => {
-  const stack = project.techStack
-    ? project.techStack.map((tech) => <Tag key={tech}>{tech}</Tag>)
-    : null
+import styled from "@emotion/styled"
 
+// import { AiFillGithub } from "react-icons/ai"
+import { BsGithub, BsPlayFill } from "react-icons/bs"
+
+const ProjectModal = ({ project, setModalContent }) => {
   return (
     <>
       {project && (
@@ -33,13 +39,43 @@ const ProjectModal = ({ project, setModalContent }) => {
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Image src={project.image} alt={project.name} />
+              <Image
+                src={project.image}
+                alt={project.name}
+                style={{ borderRadius: "10px" }}
+              />
               <Text textAlign={"justify"} fontSize={{ sm: "md", md: "lg" }}>
                 {project.description}
               </Text>
-              {/* {project.techStack &&
-                project.techStack.map((tech) => <Tag key={tech}>{tech}</Tag>)} */}
-              {stack}
+              <Wrap p={2}>
+                <Button
+                  as={Link}
+                  href={project.githubURL}
+                  target="_blank"
+                  leftIcon={<BsGithub />}
+                  textDecoration={"none"}
+                >
+                  Github
+                </Button>
+                <Button
+                  as={Link}
+                  href={project.liveDemo}
+                  target="_blank"
+                  leftIcon={<BsPlayFill />}
+                >
+                  Demo
+                </Button>
+              </Wrap>
+              {project.techStack ? (
+                <>
+                  <Divider orientation="horizontal" pt={2} />
+                  <Wrap p={2}>
+                    {project.techStack.map((tech) => (
+                      <Tag key={tech}>{tech}</Tag>
+                    ))}
+                  </Wrap>
+                </>
+              ) : null}
             </ModalBody>
           </ModalContent>
         </Modal>

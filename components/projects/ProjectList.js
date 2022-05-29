@@ -6,6 +6,7 @@ import ProjectItem from "./ProjectItem"
 import ProjectModal from "./ProjectModal"
 
 import { Container, SimpleGrid, useDisclosure } from "@chakra-ui/react"
+import YourProject from "./YourProject"
 
 const ProjectList = () => {
   const [modalContent, setModalContent] = useState()
@@ -25,6 +26,7 @@ const ProjectList = () => {
         // columns={{ sm: 2, md: 3 }}
         spacing={10}
       >
+        <YourProject />
         {projects}
       </SimpleGrid>
       <ProjectModal project={modalContent} setModalContent={setModalContent} />
