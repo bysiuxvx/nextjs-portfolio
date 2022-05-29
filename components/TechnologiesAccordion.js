@@ -38,7 +38,7 @@ const TechnologiesAccordion = () => {
               far I&apos;ve used it several times, and this portfolio was also
               built with it. I love how easy it is to set up themes and the
               theme switching component itselft, which can be used for example
-              for light / dark modes. Can only recommend.
+              for light & dark modes. Can only recommend.
             </AccordionPanel>
           </AccordionItem>
           <AccordionItem>
