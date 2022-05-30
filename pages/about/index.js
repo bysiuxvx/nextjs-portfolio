@@ -90,6 +90,7 @@ const About = () => {
                 borderRadius="full"
                 width="150px"
                 height="150px"
+                placeholder="blur"
                 priority
               />
             </Box>

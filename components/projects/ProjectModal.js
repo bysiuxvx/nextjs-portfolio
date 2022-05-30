@@ -50,6 +50,7 @@ const ProjectModal = ({ project, setModalContent }) => {
                 src={project.image}
                 alt={project.name}
                 style={{ borderRadius: "10px" }}
+                placeholder="blur"
               />
               <Text textAlign={"justify"} fontSize={{ sm: "md", md: "lg" }}>
                 {project.description}
