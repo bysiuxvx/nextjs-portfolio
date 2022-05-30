@@ -39,10 +39,10 @@ const About = () => {
     return age
   }
 
-  const ProfileImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ["width", "height", "src", "alt"].includes(prop),
-  })
+  // const ProfileImage = chakra(Image, {
+  //   shouldForwardProp: (prop) =>
+  //     ["width", "height", "src", "alt"].includes(prop),
+  // })
 
   return (
     <PageWrapper maxW={"container.md"} pb={100}>
@@ -89,12 +89,13 @@ const About = () => {
               overflow="hidden"
               boxShadow={"0 8px 32px 0 rgba( 31, 38, 135, 0.37 )"}
             >
-              <ProfileImage
+              <Image
                 src="/images/me.jpg"
                 alt="Profile image"
                 borderRadius="full"
-                width="150%"
-                height="150%"
+                width="150px"
+                height="150px"
+                priority
               />
             </Box>
           </Box>
