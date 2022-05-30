@@ -25,18 +25,14 @@ const pathList = [
 
 const Navbar = () => {
   const router = useRouter()
+  const bgColor = useColorModeValue("#9ed8db", "orange")
 
   const navPaths = pathList.map((item) => (
     <NextLink href={item.path} passHref scroll={false} key={item.name}>
       <Link
         p={2}
         borderRadius={7}
-        bg={
-          item.path === router.asPath
-            ? // eslint-disable-next-line react-hooks/rules-of-hooks
-              useColorModeValue("#9ed8db", "orange")
-            : null
-        }
+        bg={item.path === router.asPath ? bgColor : null}
         _hover={
           item.path === router.asPath
             ? { textDecoration: "none" }
@@ -64,16 +60,15 @@ const Navbar = () => {
     >
       <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
         <Stack
-          direction={["column", "row"]}
-          display={["none", "flex"]}
+          direction={{ base: "column", md: "row" }}
+          display={{ base: "none", md: "flex" }}
           alignItems="center"
-          flexGrow={0}
         >
           {navPaths}
         </Stack>
         <Box flex={1} align="right" mr={4}>
           <ColorModeToggler />
-          <Box ml={2} display={["inline-block", "none"]}>
+          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
