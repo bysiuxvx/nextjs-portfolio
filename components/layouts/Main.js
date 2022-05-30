@@ -16,7 +16,12 @@ const DynamicVoxelModel = dynamic(() => import("../VoxelModel.js"), {
 
 const Layout = ({ children, router }) => {
   return (
-    <Box as="main" h="calc(100vh)" pb={8}>
+    <Box
+      as="main"
+      // h="calc(100vh)"
+      minH={"100vh"}
+      pb={8}
+    >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Patryk's portfolio" />
@@ -27,7 +32,7 @@ const Layout = ({ children, router }) => {
       <Container maxW={"container.md"} pt={14}>
         <DynamicVoxelModel />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </Container>
     </Box>
   )

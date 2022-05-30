@@ -39,11 +39,6 @@ const About = () => {
     return age
   }
 
-  // const ProfileImage = chakra(Image, {
-  //   shouldForwardProp: (prop) =>
-  //     ["width", "height", "src", "alt"].includes(prop),
-  // })
-
   return (
     <PageWrapper maxW={"container.md"} pb={100}>
       <Head>
@@ -113,7 +108,7 @@ const About = () => {
           doing my best to become a fullstack dev by learning Node, specifically
           Express.
         </Paragraph>
-        <Divider />
+        <Divider pt={3} />
         <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Tech
         </Heading>
@@ -121,10 +116,10 @@ const About = () => {
           Some of the technologies I am familiar with and used during my
           commercial experience:
         </Paragraph>
-        <TechnologiesSection pt={2}>
+        <TechnologiesSection pt={3}>
           <TechContainer />
         </TechnologiesSection>
-        <Text textAlign={"justify"} pt={4}>
+        <Text textAlign={"justify"} pt={4} pb={3}>
           Apart from the above, I have also experimented with several other
           frameworks, state management libraries, databases, CSS preprocessors,
           UI libraries... <br />
