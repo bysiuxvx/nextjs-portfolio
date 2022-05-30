@@ -1,11 +1,12 @@
-import bookstore from "../images/projects/bookstore.jpg"
-import movieBrowser from "../images/projects/movie_browser.jpg"
-import unsplashBrowser from "../images/projects/unsplash_browser.jpg"
-import toDoApp from "../images/projects/todoapp_fullsize.jpg"
-import weatherApp from "../images/projects/weatherapp_fullsize.jpg"
-import passwordGenerator from "../images/projects/passwordgenerator_fullsize.jpg"
-import thisPic from "../images/projects/this.jpg"
-import portfolioDog from "../images/projects/portfolio-dog.jpg"
+import bookstore from "../public/images/projects/bookstore.jpg"
+import movieBrowser from "../public/images/projects/movie_browser.jpg"
+import unsplashBrowser from "../public/images/projects/unsplash_browser.jpg"
+import toDoApp from "../public/images/projects/todo_app.jpg"
+import weatherApp from "../public/images/projects/weather_app.jpg"
+import passwordGenerator from "../public/images/projects/password_generator.jpg"
+import thisPic from "../public/images/projects/this.jpg"
+// import portfolioDog from "/images/projects/portfolio-dog.jpg"
+import portfolioDog from "../public/images/projects/portfolio-dog.jpg"
 
 export const projectList = [
   {
