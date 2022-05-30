@@ -28,7 +28,7 @@ const TechContainer = () => {
   ))
 
   return (
-    <SvgContainer bg={useColorModeValue("#e2d6bf80", "#e2d6bf80")}>
+    <SvgContainer bg={useColorModeValue("#9ed8db4d", "#565659b3")}>
       {technologies}
     </SvgContainer>
   )
@@ -54,8 +54,8 @@ const technologiesList = [
     image: SvgNextjs2,
     imageAlt: "Next.js logo",
     comment: `I love React, most of the things I do are in React. And this is basically React, but better.
-    I like how some things have been improved and even simplified, like the routing as an example.
-    SSR is also going to become a standard soon, which is the main point of this framework.`,
+    I like how some things have been improved and even simplified, like the routing as an example. Also the built in lazy load for images.
+    SSR is also going to become a standard soon if not already, which is the main point of this framework.`,
   },
   {
     name: "Redux",
@@ -82,7 +82,7 @@ const technologiesList = [
     name: "Bootstrap",
     image: SvgBootstrap4,
     imageAlt: "Bootstrap logo",
-    comment: `Not a big fan of bootstrap, personally I prefer other UI libraries like semantic UI or Chakra UI, which in my opinion is both prettier and more modern, but also easier to use.`,
+    comment: `Not a big fan of bootstrap, personally I prefer other UI libraries like semantic UI or Chakra UI, which in my opinion are both prettier and more modern, but also easier to use.`,
   },
 ]
 

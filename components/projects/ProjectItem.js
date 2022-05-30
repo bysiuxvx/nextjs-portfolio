@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
 
-import { Box, Heading, Text, Link } from "@chakra-ui/react"
+import { Box, Heading, Text, Link, useColorModeValue } from "@chakra-ui/react"
 import { Global } from "@emotion/react"
 
 const ProjectItem = ({ project, setModalContent, onOpen }) => {
@@ -22,6 +22,7 @@ const ProjectItem = ({ project, setModalContent, onOpen }) => {
           setModalContent(project)
         }}
         title={project.name}
+        bg={useColorModeValue("#9ed8db4d", "#565659b3")}
       >
         <Image
           className="project-item-image inner-element"
@@ -51,17 +52,12 @@ export const ProjectItemStyle = () => (
   <Global
     styles={`
       .project-item-container {
-        background: rgba( 255, 255, 255, 0.25 );
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 4px );
+        backdrop-filter: blur( 10px );
         -webkit-backdrop-filter: blur( 4px );
         border-radius: 10px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
-        // transition: .5s;
-        // &:hover{
-        //   // transform: translateY(-5px);
-        //   transform: scale(1.03);
-        // }
+        transition: .5s;
       },
       .project-item-image {
         border-radius: 10px

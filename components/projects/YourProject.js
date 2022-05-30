@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import dynamic from "next/dynamic"
 import Image from "next/image"
 
-import { Box, Center, Heading, Text } from "@chakra-ui/react"
+import { Box, Center, Heading, Text, useColorModeValue } from "@chakra-ui/react"
 import { Global } from "@emotion/react"
 
 const YourProject = () => {
@@ -22,6 +22,7 @@ const YourProject = () => {
         className="project-item-container"
         cursor={"pointer"}
         onClick={() => router.push("/contact")}
+        bg={useColorModeValue("#9ed8db4d", "#565659b3")}
       >
         <Center>
           <Heading>YOUR PROJECT!</Heading>
