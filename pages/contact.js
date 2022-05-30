@@ -1,5 +1,11 @@
+import PageWrapper from "../components/layouts/PageWrapper"
+
 const Contact = () => {
-  return <div>Contact</div>
+  return (
+    <PageWrapper>
+      <div>Contact</div>
+    </PageWrapper>
+  )
 }
 
 export default Contact

@@ -15,14 +15,14 @@ const Page = () => {
   const Typewriter = dynamic(() => import("typewriter-effect"))
 
   return (
-    <PageWrapper maxW={"container.lg"} mb={30}>
+    <PageWrapper maxW={"container.md"} mb={30}>
       <Head>
         <meta
           name="description"
           content="Personal portfolio of Patryk Byszek."
         />
         <link rel="icon" href="/favicon.ico" />
-        <title>Test</title>
+        <title>Welcome!</title>
       </Head>
       <Container>
         <Heading fontSize={["30px", "50px"]} userSelect={"none"}>

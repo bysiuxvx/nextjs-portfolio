@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic"
+import Image from "next/image"
+import Head from "next/head"
 
 import PageWrapper from "../../components/layouts/PageWrapper.js"
 import Paragraph from "../../components/Paragraph.js"
@@ -6,7 +8,16 @@ import TechnologiesAccordion from "../../components/TechnologiesAccordion.js"
 import SvgSpinner from "../../components/SvgSpinner.js"
 
 import { TechnologiesSection } from "../../components/TechnologiesContainers.js"
-import { Box, Center, Heading, Text, Divider } from "@chakra-ui/react"
+import {
+  Box,
+  Center,
+  Heading,
+  Text,
+  Divider,
+  chakra,
+  Stack,
+  Flex,
+} from "@chakra-ui/react"
 
 const About = () => {
   const TechContainer = dynamic(
@@ -28,8 +39,16 @@ const About = () => {
     return age
   }
 
+  const ProfileImage = chakra(Image, {
+    shouldForwardProp: (prop) =>
+      ["width", "height", "src", "alt"].includes(prop),
+  })
+
   return (
     <PageWrapper maxW={"container.md"} pb={100}>
+      <Head>
+        <title>Patryk Byszek</title>
+      </Head>
       <Center maxW={"container.sm"}>
         <Box
           borderRadius={"lg"}
@@ -46,11 +65,41 @@ const About = () => {
         </Box>
       </Center>
       <Box maxW={"container.sm"} pt={3}>
-        <Heading as={"h2"} variant="page-title">
-          Patryk Byszek
-        </Heading>
-        <Text>(Developer / Musician / Coffee enjoyer)</Text>
-        <Divider />
+        <Box display={{ md: "flex" }} p={5}>
+          <Flex flexDir={"column"} flexGrow={1} justifyContent={"center"}>
+            <Heading as="h2" variant="page-title">
+              Patryk Byszek
+            </Heading>
+            <Text>{myAge()}, Developer, Musician, Coffee enjoyer</Text>
+          </Flex>
+          <Box
+            flexShrink={0}
+            mt={{ base: 4, md: 0 }}
+            ml={{ md: 6 }}
+            textAlign="center"
+          >
+            <Box
+              borderColor="whiteAlpha.800"
+              borderWidth={1}
+              borderStyle="solid"
+              w="150px"
+              h="150px"
+              display="inline-block"
+              borderRadius="full"
+              overflow="hidden"
+              boxShadow={"0 8px 32px 0 rgba( 31, 38, 135, 0.37 )"}
+            >
+              <ProfileImage
+                src="/images/me.jpg"
+                alt="Profile image"
+                borderRadius="full"
+                width="150%"
+                height="150%"
+              />
+            </Box>
+          </Box>
+        </Box>
+        <Divider pt={3} pl={10} />
         <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Bio
         </Heading>
@@ -74,13 +123,12 @@ const About = () => {
         <TechnologiesSection pt={2}>
           <TechContainer />
         </TechnologiesSection>
-        <Text textAlign={"justify"} pt={3}>
+        <Text textAlign={"justify"} pt={4}>
           Apart from the above, I have also experimented with several other
           frameworks, state management libraries, databases, CSS preprocessors,
           UI libraries... <br />
         </Text>
         <TechnologiesAccordion />
-        <Divider />
         <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
           Hobbies
         </Heading>
