@@ -1,13 +1,21 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
 
-import { Box, Heading, Text, Link, useColorModeValue } from "@chakra-ui/react"
+import Tilt from "react-parallax-tilt"
+
+import {
+  Box,
+  Heading,
+  Text,
+  Spinner,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import { Global } from "@emotion/react"
 
 const ProjectItem = ({ project, setModalContent, onOpen }) => {
-  const Tilt = dynamic(() => import("react-parallax-tilt"), {
-    ssr: "false",
-  })
+  // const Tilt = dynamic(() => import("react-parallax-tilt"), {
+  //   ssr: "false",
+  // })
 
   return (
     <Tilt className="parallax-effect" perspective={500}>
@@ -76,4 +84,22 @@ export const ProjectItemStyle = () => (
       }
     `}
   />
+)
+
+export const ProjectLoader = () => (
+  <Box
+    w={"100%"}
+    h={300}
+    bg={useColorModeValue("#9ed8db4d", "#565659b3")}
+    position="relative"
+  >
+    <Spinner
+      thickness="4px"
+      speed="0.8s"
+      size={"xl"}
+      position={"absolute"}
+      left="50%"
+      top="50%"
+    />
+  </Box>
 )

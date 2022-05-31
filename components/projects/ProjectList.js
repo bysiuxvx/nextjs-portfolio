@@ -1,15 +1,20 @@
 import { useState } from "react"
+import dynamic from "next/dynamic"
 
 import { projectList } from "../../data/project-list"
 
-import ProjectItem from "./ProjectItem"
 import ProjectModal from "./ProjectModal"
+import { ProjectLoader } from "./ProjectItem"
 
 import { Container, SimpleGrid, useDisclosure } from "@chakra-ui/react"
 import YourProject from "./YourProject"
 
 const ProjectList = () => {
   const [modalContent, setModalContent] = useState()
+
+  const ProjectItem = dynamic(() => import("./ProjectItem"), {
+    loading: () => ProjectLoader,
+  })
 
   const projects = projectList.map((project) => (
     <ProjectItem
@@ -21,11 +26,7 @@ const ProjectList = () => {
 
   return (
     <Container maxW={"container.xl"}>
-      <SimpleGrid
-        columns={2}
-        // columns={{ sm: 2, md: 3 }}
-        spacing={10}
-      >
+      <SimpleGrid columns={2} spacing={10}>
         <YourProject />
         {projects}
       </SimpleGrid>
