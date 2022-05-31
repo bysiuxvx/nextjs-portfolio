@@ -6,18 +6,9 @@ import PageWrapper from "../../components/layouts/PageWrapper.js"
 import Paragraph from "../../components/Paragraph.js"
 import TechnologiesAccordion from "../../components/TechnologiesAccordion.js"
 import SvgSpinner from "../../components/SvgSpinner.js"
-
 import { TechnologiesSection } from "../../components/TechnologiesContainers.js"
-import {
-  Box,
-  Center,
-  Heading,
-  Text,
-  Divider,
-  chakra,
-  Stack,
-  Flex,
-} from "@chakra-ui/react"
+
+import { Box, Center, Heading, Text, Divider, Flex } from "@chakra-ui/react"
 
 const About = () => {
   const TechContainer = dynamic(
@@ -85,19 +76,18 @@ const About = () => {
               boxShadow={"0 8px 32px 0 rgba( 31, 38, 135, 0.37 )"}
             >
               <Image
-                src="/images/me.jpg"
+                src={"/images/me.jpg"}
                 alt="Profile image"
                 borderRadius="full"
                 width="150px"
                 height="150px"
-                placeholder="blur"
                 priority
               />
             </Box>
           </Box>
         </Box>
         <Divider pt={3} pl={10} />
-        <Heading as={"p"} variant="section-title" fontSize={"1.5em"} pt={3}>
+        <Heading as={Text} variant="section-title" fontSize={"1.5em"} pt={3}>
           Bio
         </Heading>
         <Paragraph>
