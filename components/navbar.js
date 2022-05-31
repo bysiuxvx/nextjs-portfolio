@@ -56,7 +56,6 @@ const Navbar = () => {
       w="100%"
       backdropFilter={"blur(2.5px)"}
       zIndex={1}
-      css={{ WebkitBackdropFilter: "blur(10px)" }}
     >
       <Container display={"flex"} p={2} maxW={"container.md"} flexWrap={"wrap"}>
         <Stack
@@ -76,7 +75,12 @@ const Navbar = () => {
                 variant="outline"
                 aria-label="Options"
               />
-              <MenuList>{navPaths}</MenuList>
+              <MenuList
+                bg={useColorModeValue("#f7e5c080", "#20202380")}
+                backdropFilter={"blur(10.5px)"}
+              >
+                {navPaths}
+              </MenuList>
             </Menu>
           </Box>
         </Box>
