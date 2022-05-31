@@ -1,29 +1,32 @@
-import { Spinner } from "@chakra-ui/react"
 import Image from "next/image"
+import { Box } from "@chakra-ui/react"
 
+import mypic from "../../public/images/me.jpg"
 const ProfilePic = () => {
   return (
-    <Image
-      src={"/images/me.jpg"}
-      alt="Profile image"
+    <Box
+      borderColor="whiteAlpha.800"
+      borderWidth={1}
+      borderStyle="solid"
+      w="150px"
+      h="150px"
+      display="inline-block"
       borderRadius="full"
-      width="150px"
-      height="150px"
-      priority
-      //   placeholder="blur"
-    />
+      overflow="hidden"
+      position={"relative"}
+      boxShadow={"0 8px 32px 0 rgba( 31, 38, 135, 0.37 )"}
+    >
+      <Image
+        src={mypic}
+        alt="Profile image"
+        borderRadius="full"
+        width="150px"
+        height="150px"
+        priority
+        placeholder="blur"
+      />
+    </Box>
   )
 }
 
 export default ProfilePic
-
-export const ProfilePicSpinner = () => (
-  <Spinner
-    thickness="4px"
-    speed="0.8s"
-    size={"xl"}
-    position={"absolute"}
-    left="50%"
-    top="50%"
-  />
-)
