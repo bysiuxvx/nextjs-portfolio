@@ -6,19 +6,12 @@ import PageWrapper from "../../components/layouts/PageWrapper.js"
 import Paragraph from "../../components/Paragraph.js"
 import TechnologiesAccordion from "../../components/about/TechnologiesAccordion.js"
 import SvgSpinner from "../../components/about/SvgSpinner.js"
-import { ProfilePicSpinner } from "../../components/about/ProfilePic"
+import ProfilePic from "../../components/about/ProfilePic"
 import { TechnologiesSection } from "../../components/about/TechnologiesContainers.js"
 
 import { Box, Center, Heading, Text, Divider, Flex } from "@chakra-ui/react"
 
 const About = () => {
-  const ProfilePic = dynamic(
-    () => import("../../components/about/ProfilePic"),
-    {
-      loading: () => ProfilePicSpinner,
-    }
-  )
-
   const TechContainer = dynamic(
     () => import("../../components/about/technologiesList"),
     {
@@ -72,28 +65,7 @@ const About = () => {
             ml={{ md: 6 }}
             textAlign="center"
           >
-            <Box
-              borderColor="whiteAlpha.800"
-              borderWidth={1}
-              borderStyle="solid"
-              w="150px"
-              h="150px"
-              display="inline-block"
-              borderRadius="full"
-              overflow="hidden"
-              position={"relative"}
-              boxShadow={"0 8px 32px 0 rgba( 31, 38, 135, 0.37 )"}
-            >
-              {/* <Image
-                src={"/images/me.jpg"}
-                alt="Profile image"
-                borderRadius="full"
-                width="150px"
-                height="150px"
-                priority
-              /> */}
-              <ProfilePic />
-            </Box>
+            <ProfilePic />
           </Box>
         </Box>
         <Divider pt={3} pl={10} />
