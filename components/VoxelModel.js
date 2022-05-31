@@ -1,20 +1,18 @@
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { useGLTF, Environment, OrbitControls } from "@react-three/drei"
-import { Box } from "@chakra-ui/react"
+import { useGLTF, OrbitControls } from "@react-three/drei"
 import { VoxelContainer } from "./VoxelLoader.js"
 
-function Zoom() {
+const Zoom = () => {
   useFrame((state) => {
     state.camera.zoom += 0.0001
     state.camera.updateProjectionMatrix()
   })
 }
 
-function Dog(props) {
+const Dog = (props) => {
   const ref = useRef()
   const { scene } = useGLTF("/pb-vox-dog.glb")
-  useFrame((state, delta) => (ref.current.rotation.y += -0.01))
 
   return <primitive ref={ref} object={scene} {...props} />
 }
@@ -22,16 +20,21 @@ function Dog(props) {
 const VoxelModel = () => {
   return (
     <VoxelContainer>
-      <Canvas linear camera={{ position: [2, 2, -2.5], fov: 30 }}>
+      <Canvas
+        linear
+        camera={{
+          position: [2, 2, 3],
+          fov: 30,
+        }}
+      >
         <ambientLight intensity={1.5} />
-        <Dog
-          position={[-0.1, -0.2, 0]}
-          rotation={[0, Math.PI / 2, 0]}
-          scale={0.15}
+        <Dog position={[-0.1, -0.2, 0]} scale={0.15} />
+        <OrbitControls
+          autoRotate
+          autoRotateSpeed={1.3}
+          minDistance={1.5}
+          maxDistance={4}
         />
-        {/* <Dog position={[-0.1, -0.2, 0]} rotation={[0, Math.PI / 2, 0]} scale={0.2} /> */}
-        <OrbitControls enableZoom={false} />
-        <Zoom />
       </Canvas>
     </VoxelContainer>
   )
