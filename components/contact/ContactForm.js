@@ -27,20 +27,23 @@ const ContactForm = () => {
       {(formik) => (
         <Box as="form" onSubmit={formik.handleSubmit}>
           <TextField
-            type="input"
             name="name"
+            type="name"
+            component="input"
             label="Your name"
             placeholder="Enter your name"
           />
           <TextField
-            type="input"
             name="email"
+            type="email"
+            component="input"
             label="Your email"
             placeholder="Enter your email"
           />
           <TextField
-            type="textarea"
             name="message"
+            type="message"
+            component="textarea"
             label="Your message"
             placeholder="Enter your message"
           />
