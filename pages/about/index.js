@@ -9,7 +9,15 @@ import SvgSpinner from "../../components/about/SvgSpinner.js"
 import ProfilePic from "../../components/about/ProfilePic"
 import { TechnologiesSection } from "../../components/about/TechnologiesContainers.js"
 
-import { Box, Center, Heading, Text, Divider, Flex } from "@chakra-ui/react"
+import {
+  Box,
+  Center,
+  Heading,
+  Text,
+  Divider,
+  Flex,
+  useColorModeValue,
+} from "@chakra-ui/react"
 
 const About = () => {
   const TechContainer = dynamic(
@@ -41,8 +49,10 @@ const About = () => {
           borderRadius={"lg"}
           mt={8}
           p={2}
-          bg="#e2d6bf80"
-          css={{ backdropFilter: "blur(100px)" }}
+          // bg="#e2d6bf80"
+          // bg="#565659b3"
+          bg={useColorModeValue("#e2d6bf80", "#565659b3")}
+          css={{ backdropFilter: "blur(5px)" }}
           position={"relative"}
           textAlign="center"
           w={"20em"}
