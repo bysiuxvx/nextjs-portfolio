@@ -1,9 +1,11 @@
 import PageWrapper from "../components/layouts/PageWrapper"
 
+import ContactForm from "../components/contact/ContactForm"
+
 const Contact = () => {
   return (
     <PageWrapper>
-      <div>Contact</div>
+      <ContactForm />
     </PageWrapper>
   )
 }
