@@ -17,6 +17,7 @@
     "@react-three/drei": "^9.11.2",
     "@react-three/fiber": "^8.0.19",
     "@tippyjs/react": "^4.2.6",
+    "formik": "^2.2.9",
     "framer-motion": "^6.3.3",
     "next": "^12.1.6",
     "react": "^18.1.0",
@@ -24,7 +25,8 @@
     "react-icons": "^4.3.1",
     "react-parallax-tilt": "^1.7.37",
     "three": "^0.140.2",
-    "typewriter-effect": "^2.18.2"
+    "typewriter-effect": "^2.18.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "^8.16.0",
