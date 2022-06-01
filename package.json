@@ -17,6 +17,7 @@
     "@react-three/drei": "^9.11.2",
     "@react-three/fiber": "^8.0.19",
     "@tippyjs/react": "^4.2.6",
+    "axios": "^0.27.2",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.3",
     "next": "^12.1.6",
@@ -29,6 +30,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "eslint": "^8.16.0",
     "eslint-config-next": "^12.1.6"
   }
