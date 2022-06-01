@@ -1,30 +1,38 @@
-// import { useState } from "react"
-
 import { Formik, Field } from "formik"
-
 import { yupValidation } from "../../lib/yup-validation"
+
+import axios from "axios"
 
 import TextField from "./TextField"
 
 import { Box, Button } from "@chakra-ui/react"
 
 const ContactForm = () => {
+  const handleOnSubmit = (values, actions) => {
+    const url = process.env.POST_URL
+
+    axios({
+      method: "post",
+      url: url,
+      data: {
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      },
+    })
+      .then((res) => {
+        actions.resetForm()
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
       validationSchema={yupValidation}
-      onSubmit={(values, actions) => {
-        // setMessage("Form submitted")
-        // setSubmitted(true)
-
-        // alert(JSON.stringify(values, null, 2))
-        setTimeout(() => {
-          alert(
-            "As you are trying out if this contact form actually works, I am working in real time in making it happen 😂"
-          )
-          actions.resetForm()
-        }, 1500)
-      }}
+      onSubmit={handleOnSubmit}
     >
       {(formik) => (
         <Box as="form" onSubmit={formik.handleSubmit}>
