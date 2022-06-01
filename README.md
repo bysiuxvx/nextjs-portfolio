@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Next.js portfolio** `under construction 🛠`
 
-## Getting Started
+The portfolio is almost done, only a few minor tweaks and improvements are required.
+I am going to implement a nodemailer to handle the contact form next.
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I wanted to update my previous portfolio I made around May 2021, but instead I chose to build a new one from scratch,
+while reusing some concepts of the previous one.
+First and foremost, I decided to build it in Next.js this time around, since I really got to like this framework recently.
+Secondly, I decided to use a UI library instead of writing literally all the styling and media queries on my own as with the first one.
+This is a huge improvement already compared to the previous one, and the experience is much smoother.
+Also Chakra UI allowed me to effortlelsy use and switch between themes.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[Live demo of the app](https://pbyszek.com)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Technologies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    Next.js
+    Chakra UI
+    React-three-fiber
+    Emotion
+    Formik
+    Yup
