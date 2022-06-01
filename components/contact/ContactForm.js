@@ -18,10 +18,12 @@ const ContactForm = () => {
         // setSubmitted(true)
 
         // alert(JSON.stringify(values, null, 2))
-        alert(
-          "As you are trying out if this contact form actually works, I am working in real time in making it happen 😂"
-        )
-        actions.resetForm()
+        setTimeout(() => {
+          alert(
+            "As you are trying out if this contact form actually works, I am working in real time in making it happen 😂"
+          )
+          actions.resetForm()
+        }, 1500)
       }}
     >
       {(formik) => (
@@ -47,7 +49,9 @@ const ContactForm = () => {
             label="Your message"
             placeholder="Enter your message"
           />
-          <Button type="submit">Submit</Button>
+          <Button type="submit" isLoading={formik.isSubmitting}>
+            Submit
+          </Button>
         </Box>
       )}
     </Formik>
