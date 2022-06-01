@@ -13,7 +13,7 @@ const TextField = ({ label, component, ...props }) => {
 
   return (
     <FormControl isInvalid={meta.error && meta.touched}>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel pt={2}>{label}</FormLabel>
       <Field
         as={component === "input" ? Input : Textarea}
         {...field}
