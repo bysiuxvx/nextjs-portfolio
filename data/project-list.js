@@ -51,7 +51,7 @@ export const projectList = [
     shortDescription: "The page you have in front of you 🤓.",
     image: portfolioDog,
     imageAlt: "Dog model",
-    githubURL: "https://github.com/bysiuxvx/nextjs-homepage",
+    githubURL: "https://github.com/bysiuxvx/nextjs-portfolio",
     liveDemo: "https://pbyszek.com",
     techStack: [
       "Next.js",
