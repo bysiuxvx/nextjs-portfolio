@@ -30,6 +30,7 @@ const ProjectItem = ({ project, setModalContent, onOpen }) => {
           setModalContent(project)
         }}
         title={project.name}
+        // bg={useColorModeValue("#efe2ca", "#565659b3")}
         bg={useColorModeValue("#9ed8db4d", "#565659b3")}
       >
         <Image
