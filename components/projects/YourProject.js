@@ -2,7 +2,9 @@ import { useRouter } from "next/router"
 import dynamic from "next/dynamic"
 import Image from "next/image"
 
-import { Box, Center, Heading, Text, useColorModeValue } from "@chakra-ui/react"
+import GalaxyImage from "../../public/images/projects/galaxy.jpg"
+import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react"
+import Emoji from "../Emoji"
 import { Global } from "@emotion/react"
 
 const YourProject = () => {
@@ -24,9 +26,22 @@ const YourProject = () => {
         onClick={() => router.push("/contact")}
         bg={useColorModeValue("#9ed8db4d", "#565659b3")}
       >
-        <Center>
-          <Heading>YOUR PROJECT!</Heading>
-        </Center>
+        <Image
+          className="project-item-image inner-element"
+          width={"720"}
+          height={"400"}
+          src={GalaxyImage}
+          alt={"Background photo of space"}
+          placeholder="blur"
+          objectFit="contain"
+        />
+        <Heading className="inner-element" fontSize={18}>
+          Your project!
+        </Heading>
+
+        <Text className="inner-element">
+          So let&apos;s start working on it! <Emoji symbol="🤓" />{" "}
+        </Text>
       </Box>
     </Tilt>
   )
