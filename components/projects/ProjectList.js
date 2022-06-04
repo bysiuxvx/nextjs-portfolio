@@ -26,7 +26,7 @@ const ProjectList = () => {
 
   return (
     <Container maxW={"container.xl"}>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={10}>
         <YourProject />
         {projects}
       </SimpleGrid>
