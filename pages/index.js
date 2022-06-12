@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react"
-import { useRouter } from "next/router"
-
 import Head from "next/head"
 
 import PageWrapper from "../components/layouts/PageWrapper"
 
-import { Box, Container, Heading } from "@chakra-ui/react"
+import { Container, Text } from "@chakra-ui/react"
 import dynamic from "next/dynamic"
 
 const Page = () => {
@@ -25,7 +22,7 @@ const Page = () => {
         <title>Welcome!</title>
       </Head>
       <Container>
-        <Heading fontSize={["30px", "50px"]} userSelect={"none"}>
+        <Text fontSize={["30px", "50px"]} userSelect={"none"}>
           <Typewriter
             options={{ cursor: "" }}
             onInit={(typewriter) => {
@@ -49,8 +46,8 @@ const Page = () => {
                 .start()
             }}
           />
-        </Heading>
-        <Heading
+        </Text>
+        <Text
           fontSize={["25px", "45px"]}
           fontWeight="normal"
           userSelect={"none"}
@@ -70,7 +67,7 @@ const Page = () => {
                 .start()
             }}
           />
-        </Heading>
+        </Text>
       </Container>
     </PageWrapper>
   )
