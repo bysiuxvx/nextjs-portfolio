@@ -1,11 +1,11 @@
-import { Formik, Field } from "formik"
+import { Formik } from "formik"
 import { yupValidation } from "../../lib/yup-validation"
 
 import axios from "axios"
 
 import TextField from "./TextField"
 
-import { Box, Button } from "@chakra-ui/react"
+import { Box, Button, useColorModeValue } from "@chakra-ui/react"
 
 const ContactForm = () => {
   const handleOnSubmit = (values, actions) => {
@@ -35,7 +35,7 @@ const ContactForm = () => {
       onSubmit={handleOnSubmit}
     >
       {(formik) => (
-        <Box as="form" onSubmit={formik.handleSubmit}>
+        <Box as="form" onSubmit={formik.handleSubmit} pb={"100px"}>
           <TextField
             name="name"
             type="name"
@@ -57,7 +57,7 @@ const ContactForm = () => {
             label="Your message"
             placeholder="Enter your message"
           />
-          <Button type="submit" isLoading={formik.isSubmitting}>
+          <Button type="submit" isLoading={formik.isSubmitting} mt={5}>
             Submit
           </Button>
         </Box>
