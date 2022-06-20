@@ -8,30 +8,41 @@ import TextField from "./TextField"
 import { Box, Button, useColorModeValue } from "@chakra-ui/react"
 
 const ContactForm = () => {
-  const handleOnSubmit = (values, actions) => {
+  const handleOnSubmit = async (values, actions) => {
     const url = process.env.POST_URL
 
-    axios({
-      method: "post",
-      url: url,
-      data: {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
         name: values.name,
         email: values.email,
         message: values.message,
-      },
+      }),
     })
-      .then((res) => {
-        actions.resetForm()
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+      .then((r) => console.log(r))
+      .catch((error) => console.log(error))
+
+    // axios({
+    //   method: "post",
+    //   url: url,
+    //   data: {
+    //     name: values.name,
+    //     email: values.email,
+    //     message: values.message,
+    //   },
+    // })
+    //   .then((res) => {
+    //     actions.resetForm()
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   })
   }
 
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
-      // validationSchema={yupValidation}
+      validationSchema={yupValidation}
       onSubmit={handleOnSubmit}
     >
       {(formik) => (
