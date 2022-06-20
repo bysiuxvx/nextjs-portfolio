@@ -31,7 +31,7 @@ const ContactForm = () => {
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
-      validationSchema={yupValidation}
+      // validationSchema={yupValidation}
       onSubmit={handleOnSubmit}
     >
       {(formik) => (
