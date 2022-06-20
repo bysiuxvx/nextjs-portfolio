@@ -9,34 +9,18 @@ import { Box, Button, useColorModeValue } from "@chakra-ui/react"
 
 const ContactForm = () => {
   const handleOnSubmit = async (values, actions) => {
+    // const url = "http://localhost:4000/send_mail"
     const url = process.env.POST_URL
 
-    const response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
+    axios
+      .post(url, {
         name: values.name,
         email: values.email,
         message: values.message,
-      }),
-    })
-      .then((r) => console.log(r))
-      .catch((error) => console.log(error))
-
-    // axios({
-    //   method: "post",
-    //   url: url,
-    //   data: {
-    //     name: values.name,
-    //     email: values.email,
-    //     message: values.message,
-    //   },
-    // })
-    //   .then((res) => {
-    //     actions.resetForm()
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
+      })
+      .then((res) => {
+        actions.resetForm()
+      })
   }
 
   return (
