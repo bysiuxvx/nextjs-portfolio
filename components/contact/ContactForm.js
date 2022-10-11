@@ -5,12 +5,10 @@ import axios from "axios";
 
 import TextField from "./TextField";
 
-import { Box, Button, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 
 const ContactForm = () => {
   const handleOnSubmit = async (values, actions) => {
-    // const url = "http://localhost:4000/send_mail"
-    // const url = process.env.POST_URL
     const url = "/api/contact";
 
     axios
