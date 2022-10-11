@@ -1,15 +1,15 @@
-import Head from "next/head"
+import Head from "next/head";
 
-import PageWrapper from "../components/layouts/PageWrapper"
+import PageWrapper from "../components/layouts/PageWrapper";
 
-import { Container, Text } from "@chakra-ui/react"
-import dynamic from "next/dynamic"
+import { Container, Text } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 
 const Page = () => {
   // const [introPlayed, setIntroPlayed] = useState(false)
   // const router = useRouter()
 
-  const Typewriter = dynamic(() => import("typewriter-effect"))
+  const Typewriter = dynamic(() => import("typewriter-effect"));
 
   return (
     <PageWrapper maxW={"container.md"} mb={30}>
@@ -23,7 +23,7 @@ const Page = () => {
       </Head>
       <Container>
         <Text fontSize={["30px", "50px"]} userSelect={"none"}>
-          <Typewriter
+k          <Typewriter
             options={{ cursor: "" }}
             onInit={(typewriter) => {
               typewriter
@@ -43,7 +43,7 @@ const Page = () => {
                 .pauseFor(500)
                 .deleteChars("4")
                 .typeString("World!")
-                .start()
+                .start();
             }}
           />
         </Text>
@@ -64,13 +64,13 @@ const Page = () => {
                 .deleteChars(10)
                 .pauseFor(1000)
                 .typeString("<strong>were created</strong> by me!")
-                .start()
+                .start();
             }}
           />
         </Text>
       </Container>
     </PageWrapper>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

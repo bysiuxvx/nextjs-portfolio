@@ -1,16 +1,17 @@
-import { Formik } from "formik"
-import { yupValidation } from "../../lib/yup-validation"
+import { Formik } from "formik";
+import { yupValidation } from "../../lib/yup-validation";
 
-import axios from "axios"
+import axios from "axios";
 
-import TextField from "./TextField"
+import TextField from "./TextField";
 
-import { Box, Button, useColorModeValue } from "@chakra-ui/react"
+import { Box, Button, useColorModeValue } from "@chakra-ui/react";
 
 const ContactForm = () => {
   const handleOnSubmit = async (values, actions) => {
     // const url = "http://localhost:4000/send_mail"
-    const url = process.env.POST_URL
+    // const url = process.env.POST_URL
+    const url = "/api/contact";
 
     axios
       .post(url, {
@@ -19,9 +20,9 @@ const ContactForm = () => {
         message: values.message,
       })
       .then((res) => {
-        actions.resetForm()
-      })
-  }
+        actions.resetForm();
+      });
+  };
 
   return (
     <Formik
@@ -58,7 +59,7 @@ const ContactForm = () => {
         </Box>
       )}
     </Formik>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;
