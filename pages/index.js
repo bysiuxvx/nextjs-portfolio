@@ -23,7 +23,7 @@ const Page = () => {
       </Head>
       <Container>
         <Text fontSize={["30px", "50px"]} userSelect={"none"}>
-k          <Typewriter
+          <Typewriter
             options={{ cursor: "" }}
             onInit={(typewriter) => {
               typewriter
