@@ -25,22 +25,10 @@ export default function (req, res) {
   });
 
   const style = {
-    container: {
-      border: "1px solid black",
-      padding: "30px",
-      fontFamily: "sans-serif",
-      lineHeight: 1.5,
-      minHeight: "50vh",
-    },
-    header: {
-      fontSize: "24px",
-      fontWeight: "normal",
-    },
-    sender: {
-      fontWeight: "bold",
-    },
-    message: {
-      fontSize: "18px",
-    },
+    container:
+      "border: 1px solid black; padding: 30px; fontFamily: sans-serif; lineHeight: 1.5; minHeight: 50vh",
+    header: "fontSize: 24px; fontWeight: normal;",
+    sender: "fontWeight: bold;",
+    message: "fontSize: 18px",
   };
 }
