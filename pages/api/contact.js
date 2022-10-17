@@ -17,18 +17,14 @@ export default function (req, res) {
     from: `${name} ${process.env.FROM_EMAIL_USERNAME}`,
     to: process.env.RECIPIENT_EMAIL_USERNAME,
     subject: `Portfolio message from ${name} ${email}`,
-    html: `<div style={style.container}>
-    <h2 style={style.header}>Message from: <span style={style.sender}> ${name} ${email}</span>
-    <p style={style.message}>${message}</p>
+    html: `<div style="border: 1px solid black;padding: 30px;font-family: sans-serif;line-height: 1.5;min-height: 50vh;">
+    <h2 style="font-size: 24px; font-weight: normal;">Message from: <span style="font-weight: bold;"> ${name} ${email}</span>
+    <hr>
+    <p style="font-size: 18px">${message}</p>
      </div>
      `,
   });
-
-  const style = {
-    container:
-      "border: 1px solid black; padding: 30px; fontFamily: sans-serif; lineHeight: 1.5; minHeight: 50vh",
-    header: "fontSize: 24px; fontWeight: normal;",
-    sender: "fontWeight: bold;",
-    message: "fontSize: 18px",
-  };
+  setTimeout(() => {
+    res.send(true);
+  }, 3000);
 }
