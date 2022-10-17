@@ -5,28 +5,31 @@ import axios from "axios";
 
 import TextField from "./TextField";
 
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, FormLabel, useToast } from "@chakra-ui/react";
 
 const ContactForm = () => {
-  const handleOnSubmit = async (values, actions) => {
-    const url = "/api/contact";
-
-    axios
-      .post(url, {
-        name: values.name,
-        email: values.email,
-        message: values.message,
-      })
-      .then((res) => {
-        actions.resetForm();
-      });
-  };
+  const toast = useToast();
 
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
       validationSchema={yupValidation}
-      onSubmit={handleOnSubmit}
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        setSubmitting(true);
+        axios
+          .post("/api/contact", {
+            name: values.name,
+            email: values.email,
+            message: values.message,
+          })
+          .then((res) => {
+            if (res) {
+              toast(toastOptions);
+              setSubmitting(false);
+              resetForm();
+            }
+          });
+      }}
     >
       {(formik) => (
         <Box as="form" onSubmit={formik.handleSubmit} pb={"100px"}>
@@ -51,13 +54,29 @@ const ContactForm = () => {
             label="Your message"
             placeholder="Enter your message"
           />
-          <Button type="submit" isLoading={formik.isSubmitting} mt={5}>
+          {formik.isSubmitting && <FormLabel pt={2}>Please wait...</FormLabel>}
+          <Button
+            type="submit"
+            disabled={formik.isSubmitting}
+            isLoading={formik.isSubmitting}
+            mt={5}
+          >
             Submit
           </Button>
         </Box>
       )}
     </Formik>
   );
+};
+
+const toastOptions = {
+  title: "Email sent",
+  description:
+    "Thank you for contacting me, I will get in touch with you as soon as possible!",
+  status: "success",
+  duration: 9000,
+  isClosable: true,
+  position: "bottom-left",
 };
 
 export default ContactForm;
