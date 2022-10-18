@@ -16,6 +16,7 @@ const ContactForm = () => {
       validationSchema={yupValidation}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmitting(true);
+
         axios
           .post("/api/contact", {
             name: values.name,
@@ -23,8 +24,11 @@ const ContactForm = () => {
             message: values.message,
           })
           .then((res) => {
-            if (res) {
-              toast(toastOptions);
+            if (!res.data.success) {
+              toast(toastOptions.failed);
+              setSubmitting(false);
+            } else {
+              toast(toastOptions.success);
               setSubmitting(false);
               resetForm();
             }
@@ -39,6 +43,7 @@ const ContactForm = () => {
             component="input"
             label="Your name"
             placeholder="Enter your name"
+            disabled={formik.isSubmitting}
           />
           <TextField
             name="email"
@@ -46,6 +51,7 @@ const ContactForm = () => {
             component="input"
             label="Your email"
             placeholder="Enter your email"
+            disabled={formik.isSubmitting}
           />
           <TextField
             name="message"
@@ -53,6 +59,7 @@ const ContactForm = () => {
             component="textarea"
             label="Your message"
             placeholder="Enter your message"
+            disabled={formik.isSubmitting}
           />
           {formik.isSubmitting && <FormLabel pt={2}>Please wait...</FormLabel>}
           <Button
@@ -70,13 +77,24 @@ const ContactForm = () => {
 };
 
 const toastOptions = {
-  title: "Email sent",
-  description:
-    "Thank you for contacting me, I will get in touch with you as soon as possible!",
-  status: "success",
-  duration: 9000,
-  isClosable: true,
-  position: "bottom-left",
+  success: {
+    title: "Email sent",
+    description:
+      "Thank you for contacting me, I will get in touch with you as soon as possible!",
+    status: "success",
+    duration: 9000,
+    isClosable: true,
+    position: "bottom-left",
+  },
+  failed: {
+    title: "Email wasn't sent",
+    description:
+      "Your email couldn't be sent for some reason. Please try sending it again now, or give it a try later.",
+    status: "error",
+    duration: 12000,
+    isClosable: true,
+    position: "bottom-left",
+  },
 };
 
 export default ContactForm;
