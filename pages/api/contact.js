@@ -13,7 +13,7 @@ export default function (req, res) {
     },
   });
 
-  transport.sendMail({
+  const mailBody = {
     from: `${name} ${process.env.FROM_EMAIL_USERNAME}`,
     to: process.env.RECIPIENT_EMAIL_USERNAME,
     subject: `Portfolio message from ${name} ${email}`,
@@ -23,8 +23,17 @@ export default function (req, res) {
     <p style="font-size: 18px">${message}</p>
      </div>
      `,
+  };
+
+  transport.sendMail(mailBody, (error, info) => {
+    if (error) {
+      setTimeout(() => {
+        res.send({ success: false });
+      }, 3000);
+    } else {
+      setTimeout(() => {
+        res.send({ success: true });
+      }, 3000);
+    }
   });
-  setTimeout(() => {
-    res.send(true);
-  }, 3000);
 }
