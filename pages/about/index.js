@@ -1,23 +1,15 @@
-import dynamic from "next/dynamic"
-import Image from "next/image"
-import Head from "next/head"
+import dynamic from "next/dynamic";
+import Head from "next/head";
 
-import PageWrapper from "../../components/layouts/PageWrapper.js"
-import Paragraph from "../../components/Paragraph.js"
-import TechnologiesAccordion from "../../components/about/TechnologiesAccordion.js"
-import SvgSpinner from "../../components/about/SvgSpinner.js"
-import ProfilePic from "../../components/about/ProfilePic"
-import { TechnologiesSection } from "../../components/about/TechnologiesContainers.js"
+import PageWrapper from "../../components/layouts/PageWrapper.js";
+import Paragraph from "../../components/Paragraph.js";
+import TechnologiesAccordion from "../../components/about/TechnologiesAccordion.js";
+import SvgSpinner from "../../components/about/SvgSpinner.js";
+import ProfilePic from "../../components/about/ProfilePic";
+import Greeter from "../../components/greeter";
+import { TechnologiesSection } from "../../components/about/TechnologiesContainers.js";
 
-import {
-  Box,
-  Center,
-  Heading,
-  Text,
-  Divider,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Box, Heading, Text, Divider, Flex } from "@chakra-ui/react";
 
 const About = () => {
   const TechContainer = dynamic(
@@ -26,41 +18,25 @@ const About = () => {
       ssr: "false",
       loading: () => <SvgSpinner />,
     }
-  )
+  );
 
   const myAge = () => {
-    var today = new Date()
-    var birthDate = new Date("1991-07-16")
-    var age = today.getFullYear() - birthDate.getFullYear()
-    var m = today.getMonth() - birthDate.getMonth()
+    var today = new Date();
+    var birthDate = new Date("1991-07-16");
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--
+      age--;
     }
-    return age
-  }
+    return age;
+  };
 
   return (
     <PageWrapper maxW={"container.md"} pb={100}>
       <Head>
         <title>Patryk Byszek</title>
       </Head>
-      <Center maxW={"container.sm"}>
-        <Box
-          borderRadius={"lg"}
-          mt={8}
-          p={2}
-          // bg="#e2d6bf80"
-          // bg="#565659b3"
-          bg={useColorModeValue("#e2d6bf80", "#565659b3")}
-          css={{ backdropFilter: "blur(5px)" }}
-          position={"relative"}
-          textAlign="center"
-          w={"20em"}
-          userSelect="none"
-        >
-          Hi again, nice to meet you!
-        </Box>
-      </Center>
+      <Greeter>Hi again, nice to meet you!</Greeter>
       <Box maxW={"container.sm"} pt={3}>
         <Box display={{ md: "flex" }} p={5}>
           <Flex flexDir={"column"} flexGrow={1} justifyContent={"center"}>
@@ -121,7 +97,7 @@ const About = () => {
         </Paragraph>
       </Box>
     </PageWrapper>
-  )
-}
+  );
+};
 
-export default About
+export default About;
