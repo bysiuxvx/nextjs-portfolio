@@ -6,9 +6,6 @@ import { Container, Text } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
 const Page = () => {
-  // const [introPlayed, setIntroPlayed] = useState(false)
-  // const router = useRouter()
-
   const Typewriter = dynamic(() => import("typewriter-effect"));
 
   return (
@@ -17,6 +14,10 @@ const Page = () => {
         <meta
           name="description"
           content="Personal portfolio of Patryk Byszek."
+        />
+        <meta
+          name="google-site-verification"
+          content="YMtCckMVUNrbYhrc8CbIsxJNHwUvZMKAgRMK2n4pYfY"
         />
         <link rel="icon" href="/favicon.ico" />
         <title>Welcome!</title>
