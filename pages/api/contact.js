@@ -1,39 +1,52 @@
 export default function (req, res) {
-  require("dotenv").config();
-  const nodemailer = require("nodemailer");
+  require("dotenv").config()
+  const nodemailer = require("nodemailer")
 
-  const { name, email, message } = req.body;
+  const HOST = "smtp-mail.outlook.com"
+  const PORT = 587
 
-  const transport = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    port: 587,
+  const { name, email, message } = req.body
+
+  const mailerConfig = {
+    host: HOST,
+    port: PORT,
     auth: {
       user: process.env.FROM_EMAIL_USERNAME,
       pass: process.env.FROM_EMAIL_PASSWORD,
     },
-  });
+    tls: {
+      rejectUnauthorized: false,
+    },
+  }
 
-  const mailBody = {
-    from: `${name} ${process.env.FROM_EMAIL_USERNAME}`,
-    to: process.env.RECIPIENT_EMAIL_USERNAME,
-    subject: `Portfolio message from ${name} ${email}`,
-    html: `<div style="border: 1px solid black;padding: 30px;font-family: sans-serif;line-height: 1.5;min-height: 50vh;">
-    <h2 style="font-size: 24px; font-weight: normal;">Message from: <span style="font-weight: bold;"> ${name} ${email}</span>
-    <hr>
-    <p style="font-size: 18px">${message}</p>
-     </div>
-     `,
-  };
+  const transport = nodemailer.createTransport(mailerConfig)
 
-  transport.sendMail(mailBody, (error, info) => {
+  const fromAddress = `${name} <${process.env.FROM_EMAIL_USERNAME}>`
+  const toAddress = process.env.RECIPIENT_EMAIL_USERNAME
+
+  const responseBody = {
+    from: fromAddress,
+    to: toAddress,
+    subject: `Message from ${name} (${email})`,
+    html: `
+      <div style="border: 1px solid #000; padding: 30px; font-family: sans-serif; line-height: 1.5; min-height: 50vh; background-color: #f9f9f9;">
+        <h2 style="font-size: 24px; font-weight: normal; color: #333;">Message from: <strong>${name}</strong> (<a href="mailto:${email}" style="color: #1a0dab; text-decoration: none;">${email}</a>)</h2>
+        <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;" />
+        <p style="font-size: 18px; color: #555;">${message}</p>
+      </div>
+    `,
+  }
+
+  transport.sendMail(responseBody, (error, info) => {
     if (error) {
+      console.log(error)
       setTimeout(() => {
-        res.send({ success: false });
-      }, 3000);
+        res.send({ success: false })
+      }, 3000)
     } else {
       setTimeout(() => {
-        res.send({ success: true });
-      }, 3000);
+        res.send({ success: true })
+      }, 3000)
     }
-  });
+  })
 }

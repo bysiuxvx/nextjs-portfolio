@@ -1,17 +1,38 @@
-import { Formik } from "formik";
-import { yupValidation } from "../../lib/yup-validation";
+import { Formik } from "formik"
+import { yupValidation } from "../../lib/yup-validation"
 
-import axios from "axios";
+import axios from "axios"
 
-import TextField from "./TextField";
+import TextField from "./TextField"
 
-import { Box, Button, FormLabel, useToast } from "@chakra-ui/react";
-import Greeter from "../greeter";
-import PageWrapper from "../layouts/PageWrapper";
+import { Box, Button, FormLabel, useToast } from "@chakra-ui/react"
+import Greeter from "../greeter"
+import PageWrapper from "../layouts/PageWrapper"
 
 const ContactForm = () => {
-  const toast = useToast();
+  const toast = useToast()
 
+  const submitForm = async (values, { setSubmitting, resetForm }) => {
+    setSubmitting(true)
+    try {
+      const response = await axios.post("/api/contact", {
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      })
+
+      if (!response.data.success) {
+        toast(toastOptions.failed)
+        return
+      }
+      toast(toastOptions.success)
+      resetForm()
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setSubmitting(false)
+    }
+  }
   return (
     <PageWrapper mt={-100}>
       <Greeter>
@@ -22,24 +43,7 @@ const ContactForm = () => {
         initialValues={{ name: "", email: "", message: "" }}
         validationSchema={yupValidation}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          setSubmitting(true);
-
-          axios
-            .post("/api/contact", {
-              name: values.name,
-              email: values.email,
-              message: values.message,
-            })
-            .then((res) => {
-              if (!res.data.success) {
-                toast(toastOptions.failed);
-                setSubmitting(false);
-              } else {
-                toast(toastOptions.success);
-                setSubmitting(false);
-                resetForm();
-              }
-            });
+          submitForm(values, { setSubmitting, resetForm })
         }}
       >
         {(formik) => (
@@ -83,8 +87,8 @@ const ContactForm = () => {
         )}
       </Formik>
     </PageWrapper>
-  );
-};
+  )
+}
 
 const toastOptions = {
   success: {
@@ -105,6 +109,6 @@ const toastOptions = {
     isClosable: true,
     position: "bottom-left",
   },
-};
+}
 
-export default ContactForm;
+export default ContactForm
