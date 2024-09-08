@@ -13,12 +13,8 @@ import {
 import { Global } from "@emotion/react"
 
 const ProjectItem = ({ project, setModalContent, onOpen }) => {
-  // const Tilt = dynamic(() => import("react-parallax-tilt"), {
-  //   ssr: "false",
-  // })
-
   return (
-    <Tilt className="parallax-effect" perspective={500}>
+    <Tilt>
       <Box
         w={"100%"}
         p={3}
@@ -30,7 +26,6 @@ const ProjectItem = ({ project, setModalContent, onOpen }) => {
           setModalContent(project)
         }}
         title={project.name}
-        // bg={useColorModeValue("#efe2ca", "#565659b3")}
         bg={useColorModeValue("#9ed8db4d", "#565659b3")}
       >
         <Image

@@ -1,7 +1,5 @@
-export { default as Bootstrap4 } from './Bootstrap4'
-export { default as Docker } from './Docker'
-export { default as Nextjs2 } from './Nextjs2'
-export { default as React2 } from './React2'
-export { default as Redux } from './Redux'
-export { default as Sass1 } from './Sass1'
-export { default as Typescript } from './Typescript'
+export { default as Nextjs2 } from "./Nextjs2"
+export { default as Redux } from "./Redux"
+export { default as Typescript } from "./Typescript"
+export { default as Angular } from "./Angular"
+export { default as Express } from "./Express"

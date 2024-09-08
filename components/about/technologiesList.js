@@ -1,16 +1,10 @@
-import SvgNextjs2 from "../../SVG/Nextjs2"
-import SvgTypescript from "../../SVG/Typescript"
-import SvgRedux from "../../SVG/Redux"
-import SvgSass1 from "../../SVG/Sass1"
-import SvgDocker from "../../SVG/Docker"
-import SvgBootstrap4 from "../../SVG/Bootstrap4"
-
 import { SvgContainer, SVG, StyledIcon } from "./TechnologiesContainers"
 import { useColorModeValue } from "@chakra-ui/react"
 import Tippy from "@tippyjs/react"
 import { followCursor } from "tippy.js"
 import "tippy.js/animations/scale-subtle.css"
 import "tippy.js/dist/tippy.css"
+import { Angular, Typescript, Nextjs2, Redux, Express } from "../../SVG"
 
 const TechContainer = () => {
   const technologies = technologiesList.map((technology) => (
@@ -35,54 +29,38 @@ const TechContainer = () => {
 }
 
 const technologiesList = [
-  //   {
-  //     name: "React",
-  //     image: SvgReact2,
-  //     imageAlt: "React logo",
-  //     comment: "To be honest? Pure love! 🥰",
-  //   },
   {
     name: "TypeScript",
-    image: SvgTypescript,
+    image: Typescript,
     imageAlt: "TypeScript logo",
     comment: `It was a bit frustrating to use in the beginning due to all the errors and interface setups, but that's actually the point ot if.
-    And I noticed - I don't repeat those mistakes too often afterwards 🤓. The key lies in knowing when and where to use it. Using TS for a landing page that has no logic behind it is a complete overkill imho.`,
+    And I noticed - I don't repeat those mistakes too often afterwards 🤓.`,
   },
-
+  {
+    name: "Angular",
+    image: Angular,
+    imageAlt: "Angular logo",
+    comment:
+      "Coming from React, it was a bit confusing to use in the beginning when I landed my first junior position in a company using Agular in all of the projects. It took me some time to get used to it, but nowadays I really enjoy it. What I appreciate the most about Angualr is that it comes as a whole package that just works. You don't need to contemplate for hours what library to use for forms, what state management to go for. It's that simple. I love RXJS and the fact that Signals are now a part of Angular too.",
+  },
   {
     name: "Next.js",
-    image: SvgNextjs2,
+    image: Nextjs2,
     imageAlt: "Next.js logo",
-    comment: `I love React, most of the things I do are in React. And this is basically React, but better.
-    I like how some things have been improved and even simplified, like the routing as an example. Also the built in lazy load for images.
-    SSR is also going to become a standard soon if not already, which is the main point of this framework.`,
+    comment: `I love React, most of the things I do privately are in React. Next.js is just the next step. I like how some things have been improved and even simplified, like the routing as an example. SSR is also going to become a standard soon if not already, which is the main point of this framework.`,
   },
   {
     name: "Redux",
-    image: SvgRedux,
+    image: Redux,
     imageAlt: "Redux logo",
-    comment: `Love & hate relationship. I wish every Redux project was at least based on Redux Toolkit, it would be so much clearer.
-    Things can become confusing with Redux reaaaally fast 😵‍💫.`,
+    comment: `My view on Redux has changed many times. I find that Redux Toolkit is quite ok, but still, there's better ways to do state management in my opinion. Zustand, or even better Jotai, as examples.`,
   },
   {
-    name: "Sass",
-    image: SvgSass1,
-    imageAlt: "Sass logo",
+    name: "Express",
+    image: Express,
+    imageAlt: "Express logo",
     comment:
-      "I rarely use preprocessors these days, but if I had to use one it would definitely be SCSS!",
-  },
-  {
-    name: "Docker",
-    image: SvgDocker,
-    imageAlt: "Docker logo",
-    comment:
-      "I've had some experience with Docker during my internship, couldn't call my self efficient in that matter - but I see the advantages of containerization it in a project.",
-  },
-  {
-    name: "Bootstrap",
-    image: SvgBootstrap4,
-    imageAlt: "Bootstrap logo",
-    comment: `Not a big fan of bootstrap, personally I prefer other UI libraries like semantic UI or Chakra UI, which in my opinion are both prettier and more modern, but also easier to use.`,
+      "Commercially I've never really worked on a backend, as that was never my role, and I never had a Node.js backend at work. But I've written many middlewares for swagger to test the functionality and interactivity of the Angular applications I've worked on.",
   },
 ]
 
