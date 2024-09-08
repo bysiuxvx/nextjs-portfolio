@@ -25,6 +25,7 @@ Also, Chakra UI allowed me to effortlelsy use and switch between themes.
 ## Demo
 
 [Vercel](https://nextjs-portfolio-weld-mu.vercel.app/)
+<br>
 [My domain (might be expired)](https://pbyszek.com)
 
 <hr>
