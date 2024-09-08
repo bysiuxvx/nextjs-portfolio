@@ -30,7 +30,7 @@ export const SVG = styled(Box)`
 export const StyledIcon = styled(Icon)`
   height: 50px;
   width: 50px;
-  transition: 0.5s;
+  transition: 0.15s;
   &:hover {
     transform: scale(1.3);
   }
