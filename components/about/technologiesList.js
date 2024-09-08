@@ -41,7 +41,7 @@ const technologiesList = [
     image: Angular,
     imageAlt: "Angular logo",
     comment:
-      "Coming from React, it was a bit confusing to use in the beginning when I landed my first junior position in a company using Agular in all of the projects. It took me some time to get used to it, but nowadays I really enjoy it. What I appreciate the most about Angualr is that it comes as a whole package that just works. You don't need to contemplate for hours what library to use for forms, what state management to go for. It's that simple. I love RXJS and the fact that Signals are now a part of Angular too.",
+      "Coming from React, it was a bit confusing to use in the beginning when I landed my first junior position in a company using Agular in all of the projects. It took me some time to get used to it, but nowadays I really enjoy it. What I appreciate the most about Angular is that it comes as a whole package that just works. You don't need to contemplate for hours what library to use for forms, what state management to go for. It's that simple. I love RXJS and the fact that Signals are now a part of Angular too.",
   },
   {
     name: "Next.js",
