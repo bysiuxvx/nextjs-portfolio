@@ -19,11 +19,14 @@ This is a huge improvement already compared to the previous one, and the
 experience is much smoother.
 
 Also, Chakra UI allowed me to effortlelsy use and switch between themes.
+
 <hr>
 
 ## Demo
 
-[Live demo of the app](https://pbyszek.com)
+[Vercel](https://nextjs-portfolio-weld-mu.vercel.app/)
+[My domain (might be expired)](https://pbyszek.com)
+
 <hr>
 
 ## Technologies
