@@ -39,14 +39,12 @@ export default function (req, res) {
 
   transport.sendMail(responseBody, (error, info) => {
     if (error) {
-      console.log(error)
-      setTimeout(() => {
-        res.send({ success: false })
-      }, 3000)
+      console.error(error)
+      res.status(500).send({ success: false, error: error.message })
     } else {
-      setTimeout(() => {
-        res.send({ success: true })
-      }, 3000)
+      res
+        .status(200)
+        .send({ success: true, message: "Email sent successfully" })
     }
   })
 }
